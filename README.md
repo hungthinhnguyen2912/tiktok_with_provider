@@ -1,4 +1,4 @@
-Tiktok clone with:
+# Tiktok clone with:
 **- Firestore databse**
 **- Firebase authentication**
 **- Provider**
