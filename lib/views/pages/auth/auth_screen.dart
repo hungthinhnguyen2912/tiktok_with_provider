@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktokclone/views/pages/auth/login_screen.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -54,14 +55,16 @@ class AuthScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
-                      // Màu nền của nút
                       backgroundColor: Colors.white38,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                          5,
-                        ),
+                        borderRadius: BorderRadius.circular(5),
                       ),
                     ),
                     child: Padding(
