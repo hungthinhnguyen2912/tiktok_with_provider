@@ -4,7 +4,8 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:tiktokclone/database/service/user_service.dart';
 
 import '../../views/pages/auth/auth_screen.dart';
-import '../../views/pages/auth/home_screen.dart';
+
+import '../../views/pages/home/home_screen.dart';
 import '../../views/widgets/snackbar.dart';
 
 class AuthService {
@@ -21,7 +22,7 @@ class AuthService {
       String? uid = userCredential.user?.uid.toString();
       final storage = FlutterSecureStorage();
       await storage.write(key: "uid", value: uid);
-      String? value = await storage.read(key: 'uID');
+      String? value = await storage.read(key: 'uid');
       FocusScope.of(context).unfocus();
       Navigator.pushAndRemoveUntil(
         context,
@@ -69,7 +70,7 @@ class AuthService {
     required email,
     required password,
     required fullName,
-    required UID,
+    required uid,
   }) async {
     try {
       UserCredential userCredential = await auth

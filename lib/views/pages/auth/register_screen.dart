@@ -37,16 +37,6 @@ class RegisterScreen extends StatelessWidget {
     }
   }
 
-  bool validate() {
-    if (fullNameController.text.isNotEmpty &&
-        emailController.text.isNotEmpty &&
-        passwordController.text.isNotEmpty &&
-        confirmPasswordController.text.isNotEmpty) {
-      return true;
-    }
-    return false;
-  }
-
   String? validateConfirmPassword(String value) {
     if (value == '') {
       return "Empty Field !";
@@ -57,6 +47,16 @@ class RegisterScreen extends StatelessWidget {
     }
   }
 
+  bool validate() {
+    if (fullNameController.text.isNotEmpty &&
+        emailController.text.isNotEmpty &&
+        passwordController.text.isNotEmpty &&
+        confirmPasswordController.text.isNotEmpty) {
+      return true;
+    }
+    return false;
+  }
+
   void doRegister(BuildContext context) {
     if (validate()) {
       AuthService.register(
@@ -64,7 +64,7 @@ class RegisterScreen extends StatelessWidget {
         email: emailController.text,
         password: passwordController.text,
         fullName: fullNameController.text,
-        UID: null,
+        uid: '',
       );
     }
   }

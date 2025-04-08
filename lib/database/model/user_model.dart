@@ -1,6 +1,6 @@
 class UserModel {
   String gender;
-  String fullName;
+  String fullname;
   String email;
   String age;
   String phone;
@@ -14,7 +14,7 @@ class UserModel {
         required this.phone,
         required this.age,
         required this.avatarURL,
-        required this.fullName,
+        required this.fullname,
         this.follower,
         this.following});
 }
